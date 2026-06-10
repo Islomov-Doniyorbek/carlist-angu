@@ -1,0 +1,25 @@
+<h4 class="mb-3">Add a new car</h4>
+
+<form [formGroup]="carForm" (ngSubmit)="onSubmit()" action="">
+    <div class="form-floating mb-3">
+        <input type="text" id="brand" class="form-control" formControlName="brand" name="brand" placeholder="K5">
+        <label for="brand">Brand</label>
+    </div>
+    <div class="form-floating mb-3">
+        <input type="text" id="model" class="form-control" formControlName="model" name="model" placeholder="KIA">
+        <label for="model">Model</label>
+    </div>
+    <div class="form-floating mb-3">
+        <input type="number" id="price" class="form-control" formControlName="price" name="price" placeholder="100">
+        <label for="price">Price per day</label>
+    </div>
+    <div class="form-floating mb-3">
+        <input type="text" id="image" class="form-control" formControlName="previewImage" name="image" placeholder="100">
+        <label for="image">Image</label>
+    </div>
+    <button type="submit"
+            class="btn btn-primary w-100"
+            [disabled]="carForm.invalid || carForm.pending">
+         Submit
+    </button>
+</form>

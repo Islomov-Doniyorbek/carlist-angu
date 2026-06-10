@@ -1,0 +1,21 @@
+<h3>Car list</h3>
+
+@if (cars.length > 0) {
+    @for (car of cars(); track car.id) {
+        <div class="card mb-3 shdow-sm">
+            <img [src]="car.previewImage"
+            class="card-img-top"
+            alt="">
+            <div class="card-body">
+                <h5 class="card-title">{{car.brand}}, {{car.model}}</h5>
+                <p class="card-text text-muted">{{car.price | currency}} USD/ Day</p>
+                <button class="btn btn-danger w-100" (click)="onDelete(car.id)">Delete</button>
+            </div>
+        </div>
+    }
+
+}@else {
+    <div class="alert alert-warning" role="alert">
+     Car not found
+    </div>
+}
